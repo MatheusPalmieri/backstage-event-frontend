@@ -1,8 +1,11 @@
-import { Container } from '@/components/container';
+import { Container } from '@/components/Container';
+import { Header } from '@/components/Header';
 
 export default function Home() {
   return (
-    <main className='w-full min-h-screen flex items-center justify-center flex-col'>
+    <main className='bg-secondary-550 w-full min-h-screen flex flex-col'>
+      <Header />
+
       <Container>
         <h1 className='text-4xl font-bold tracking-wide uppercase'>
           Back<span className='text-primary-500'>stage</span>
