@@ -1,7 +1,11 @@
 import { Container } from '@/components/Container';
 import { Header } from '@/components/Header';
+import { getEvents } from '@/services/event';
+import Link from 'next/link';
 
-export default function Home() {
+export default async function Home() {
+  const { data: events } = await getEvents();
+
   return (
     <main className='bg-secondary-550 w-full min-h-screen flex flex-col'>
       <Header />
@@ -17,6 +21,18 @@ export default function Home() {
           asperiores enim rerum quisquam laborum, alias maxime eligendi corrupti
           delectus ad doloribus.
         </p>
+
+        <div className='grid grid-cols-2 gap-4'>
+          {events.map((event) => (
+            <div key={event._id} className='p-6 bg-primary-200 rounded-lg'>
+              <h2>{event.name}</h2>
+
+              <Link href={`/evento/${event.slug}`}>
+                <p>Comprar Ingressos</p>
+              </Link>
+            </div>
+          ))}
+        </div>
       </Container>
     </main>
   );
