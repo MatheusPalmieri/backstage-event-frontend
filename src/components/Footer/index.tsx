@@ -3,7 +3,7 @@
 import WhiteBolt from '@/../public/images/logo/logo-white.svg';
 import VioletBolt from '@/../public/images/logo/logo-violet.svg';
 import Logo from '@/../public/images/logo/logo-backstage.svg';
-import { useMobile } from '@/helpers/useMobile';
+import { useMobile } from '@/helpers/mobile';
 
 export const Footer = () => {
   const isMobile = useMobile();

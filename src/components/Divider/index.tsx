@@ -1,15 +1,17 @@
 interface DividerProps {
-  margin?: boolean;
+  margin?: string;
+  opacity?: string | number;
 }
 
-export const Divider = ({ margin = false }: DividerProps) => (
+export const Divider = ({ margin = '20px', opacity = 0.2 }: DividerProps) => (
   <div
-    className='bg-secondary-400 opacity-20'
+    className='bg-secondary-400'
     style={{
       width: '100%',
       height: '1px',
       marginInline: 'auto',
-      marginBlock: margin ? '5px' : '20px',
+      marginBlock: margin,
+      opacity: opacity,
     }}
   />
 );

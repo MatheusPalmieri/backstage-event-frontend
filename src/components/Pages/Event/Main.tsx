@@ -5,6 +5,8 @@ import { Image } from './Image';
 import { IconCalendarWeek, IconMapPin, IconShare2 } from '@tabler/icons-react';
 import { TextIcon } from '@/components/Texts/TextIcon';
 import { Title } from '@/components/Titles/Title';
+import { Ticket } from './Ticket';
+import { TicketType } from '@/interfaces/ticketType';
 
 interface MainProps {
   image: {
@@ -12,9 +14,10 @@ interface MainProps {
     alt: string;
   };
   name: string;
+  ticketTypes: TicketType[];
 }
 
-export const Main = ({ image, name }: MainProps) => {
+export const Main = ({ image, name, ticketTypes }: MainProps) => {
   const { url, alt } = image;
 
   const share = () => {
@@ -55,6 +58,10 @@ export const Main = ({ image, name }: MainProps) => {
         <TextIcon Icon={IconMapPin}>
           We Are Reino, Balneário Camboriú - SC
         </TextIcon>
+      </article>
+
+      <article className='p-4'>
+        <Ticket ticketTypes={ticketTypes} />
       </article>
     </section>
   );
