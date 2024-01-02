@@ -14,7 +14,7 @@ export const Tickets = ({ ticketTypes }: TicketsProps) => (
 
       return lots.map((lot) => {
         const { name: batch, price, tax, installments, quantity } = lot;
-        const { available, minPerOrder, maxPerOrder } = quantity;
+        const { maxPerOrder } = quantity;
 
         return (
           <div key={lot._id}>
