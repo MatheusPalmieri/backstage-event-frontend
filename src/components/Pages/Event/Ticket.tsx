@@ -1,5 +1,6 @@
 import { Header } from '@/components/TicketSelect/Header';
 import { Tickets } from '@/components/TicketSelect/Tickets';
+import { TicketsFooter } from '@/components/TicketsFooter';
 import { TicketType } from '@/interfaces/ticketType';
 
 interface TicketProps {
@@ -13,15 +14,7 @@ export const Ticket = ({ ticketTypes }: TicketProps) => {
 
       <Tickets ticketTypes={ticketTypes} />
 
-      <div className='p-4'>
-        <button
-          className='bg-secondary-50 w-full rounded-lg text-secondary-350 uppercase font-bold'
-          style={{ height: '50px' }}
-          disabled
-        >
-          Selecione um ingresso
-        </button>
-      </div>
+      <TicketsFooter />
     </div>
   );
 };

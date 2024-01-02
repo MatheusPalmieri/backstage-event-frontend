@@ -27,7 +27,7 @@ export const Tickets = ({ ticketTypes }: TicketsProps) => (
                 installments={installments}
               />
 
-              <Counter price={price} maxPerOrder={maxPerOrder} />
+              <Counter price={price + tax} maxPerOrder={maxPerOrder} />
             </div>
 
             <Divider margin='0px' opacity={0.6} />

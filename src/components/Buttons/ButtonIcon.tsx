@@ -1,10 +1,11 @@
 import { Icon } from '@tabler/icons-react';
+import { ReactNode } from 'react';
 
 const IconComponent = ({ Icon }: { Icon: Icon }) => <Icon size={30} />;
 
 interface ButtonIconProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+  children: ReactNode;
   w?: string | number;
   h?: string | number;
   LeftIcon?: Icon;
