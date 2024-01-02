@@ -5,6 +5,7 @@ import VioletBolt from '@/../public/images/logo/logo-violet.svg';
 import Logo from '@/../public/images/logo/logo-backstage.svg';
 
 import { useMobile } from '@/helpers/mobile';
+import Link from 'next/link';
 
 const Image = ({
   image,
@@ -25,21 +26,18 @@ export const Header = () => {
   const isMobile = useMobile();
 
   return (
-    <header
-      className='bg-secondary-500 w-full flex justify-center drop-shadow-md'
-      style={{ height: '80px' }}
-    >
-      {isMobile ? (
-        <div className='flex'>
-          <Image image={WhiteBolt} alt='branco' />
-
-          <Image image={VioletBolt} alt='violeta' />
-        </div>
-      ) : (
-        <div className='flex items-center'>
+    <header className='bg-secondary-500 w-full h-[80px] flex justify-center drop-shadow-md'>
+      <Link href='/' className='flex items-center gap-[10px]'>
+        {isMobile ? (
           <Image image={Logo} alt='Logo da Backstage' />
-        </div>
-      )}
+        ) : (
+          <>
+            <Image image={VioletBolt} alt='violeta' />
+            <Image image={Logo} alt='Logo da Backstage' />
+            <Image image={WhiteBolt} alt='branco' />
+          </>
+        )}
+      </Link>
     </header>
   );
 };
