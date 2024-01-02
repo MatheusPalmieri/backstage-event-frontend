@@ -12,7 +12,6 @@ interface HeaderProps {
 
 export const Header = ({ tickets }: HeaderProps) => {
   const { amount } = useTicket();
-  console.log('🚀 ~ file: Header.tsx:15 ~ Header ~ amount:', amount);
 
   return (
     <header
