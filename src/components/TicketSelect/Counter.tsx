@@ -1,14 +1,18 @@
 'use client';
 
 import { ButtonCounter } from '@/components/Buttons/Counter';
+import { useTicket } from '@/contexts/ticket/useTicket';
 import { IconCircleMinus, IconCirclePlus } from '@tabler/icons-react';
 import { useState } from 'react';
 
 interface CounterProps {
+  price: number;
   maxPerOrder: number;
 }
 
-export const Counter = ({ maxPerOrder }: CounterProps) => {
+export const Counter = ({ price, maxPerOrder }: CounterProps) => {
+  const { handleCalculateAmount } = useTicket();
+
   const [total, setTotal] = useState<number>(0);
 
   const someQuantity = (action: 'remove' | 'add') => {
@@ -17,12 +21,14 @@ export const Counter = ({ maxPerOrder }: CounterProps) => {
         return null;
       } else if (total > 0) {
         setTotal((total) => --total);
+        handleCalculateAmount('remove', price);
       }
     } else if (action === 'add') {
       if (total >= maxPerOrder) {
         return null;
       } else {
         setTotal((total) => ++total);
+        handleCalculateAmount('add', price);
       }
     }
   };

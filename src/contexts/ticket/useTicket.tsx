@@ -1,7 +1,12 @@
 'use client';
 
-import { createContext, useContext, useMemo, useState } from 'react';
-import { Event } from '@/interfaces/event';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 import { TicketType } from '@/interfaces/ticketType';
 import { TicketContextProps, TicketProviderProps } from './props';
 
@@ -10,14 +15,22 @@ export const TicketContext = createContext({} as TicketContextProps);
 export function TicketProvider({ children }: TicketProviderProps) {
   const [ticketType, setTicketType] = useState<TicketType | null>(null);
   const [amount, setAmount] = useState<number>(0);
+  const [quantity, setQuantity] = useState<number>(0);
 
-  const handleCalculateAmount = (action: 'remove' | 'add', value: number) => {
-    if (action === 'remove') {
-      setAmount((amount) => amount + value);
-    } else if (action === 'add') {
-      setAmount((amount) => amount - value);
-    }
-  };
+  const handleCalculateAmount = useCallback(
+    (action: 'remove' | 'add', value: number) => {
+      if (action === 'remove') {
+        if (amount > 0 && quantity > 0) {
+          setAmount((amount) => amount - value);
+          setQuantity((quantity) => --quantity);
+        }
+      } else if (action === 'add') {
+        setAmount((amount) => amount + value);
+        setQuantity((quantity) => ++quantity);
+      }
+    },
+    [amount, quantity],
+  );
 
   const providerValues = useMemo(
     () => ({
@@ -28,8 +41,22 @@ export function TicketProvider({ children }: TicketProviderProps) {
       setAmount,
 
       handleCalculateAmount,
+
+      quantity,
+      setQuantity,
     }),
-    [ticketType, setTicketType, amount, setAmount, handleCalculateAmount],
+    [
+      ticketType,
+      setTicketType,
+
+      amount,
+      setAmount,
+
+      handleCalculateAmount,
+
+      quantity,
+      setQuantity,
+    ],
   );
 
   return (

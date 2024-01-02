@@ -13,4 +13,7 @@ export type TicketContextProps = {
   setAmount: (amount: number) => void;
 
   handleCalculateAmount: (action: 'remove' | 'add', value: number) => void;
+
+  quantity: number;
+  setQuantity: (quantity: number) => void;
 };

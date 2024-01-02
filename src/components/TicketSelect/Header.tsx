@@ -1,3 +1,4 @@
+import { useTicket } from '@/contexts/ticket/useTicket';
 import { formatCurrency } from '@/helpers/format';
 import { IconShoppingCart } from '@tabler/icons-react';
 
@@ -10,9 +11,8 @@ interface HeaderProps {
 }
 
 export const Header = ({ tickets }: HeaderProps) => {
-  const total = tickets.reduce((acc, ticket) => {
-    return acc + ticket.price;
-  }, 0);
+  const { amount } = useTicket();
+  console.log('🚀 ~ file: Header.tsx:15 ~ Header ~ amount:', amount);
 
   return (
     <header
@@ -29,7 +29,7 @@ export const Header = ({ tickets }: HeaderProps) => {
 
       <div className='flex items-center justify-center'>
         <IconShoppingCart />
-        <p className='font-semibold ml-2'>{formatCurrency(total)}</p>
+        <p className='font-semibold ml-2'>{formatCurrency(amount)}</p>
       </div>
     </header>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/globals/css/globals.css';
 import { quicksand } from '../../public/fonts/fonts';
 import { EventProvider } from '@/contexts/event/useEvent';
+import { TicketProvider } from '@/contexts/ticket/useTicket';
 
 export const metadata: Metadata = {
   title: 'BACKSTAGE',
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang='pt-br'>
       <body className={quicksand.className}>
-        <EventProvider>{children}</EventProvider>
+        <EventProvider>
+          <TicketProvider>{children}</TicketProvider>
+        </EventProvider>
       </body>
     </html>
   );
