@@ -17,11 +17,8 @@ export const Header = ({ tickets }: HeaderProps) => {
 
   return (
     <header
-      className='bg-primary-500 flex items-center justify-between p-4'
+      className='bg-primary-500 w-[100%] max-w-[500px] h-[50px] flex items-center justify-between p-4'
       style={{
-        width: '100%',
-        maxWidth: '500px',
-        height: '60px',
         borderStartStartRadius: '20px',
         borderStartEndRadius: '20px',
       }}
