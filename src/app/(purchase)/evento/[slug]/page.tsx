@@ -6,14 +6,12 @@ import { Event } from '@/interfaces/event';
 import { getEvent } from '@/services/event';
 import { getTicketTypes } from '@/services/ticket';
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function Page({ params }: PageProps) {
-  const { data: event } = await getEvent(params.slug);
+export default async function Page({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  const { data: event } = await getEvent(slug);
   if (!event) return <h1>Evento não encontrado</h1>;
 
   const { data: ticketTypes } = await getTicketTypes((event as Event)._id);
@@ -24,10 +22,13 @@ export default async function Page({ params }: PageProps) {
     <main className='bg-secondary-550 w-full min-h-screen flex flex-col'>
       <title>{name.toUpperCase()}</title>
 
-      <Header />
+      <Header slug={event.slug} />
 
       <Main
-        image={{ url: resource.url, alt: `Imagem referente ao evento ${name}` }}
+        image={{
+          url: resource.url,
+          alt: `Imagem referente ao evento ${name}`,
+        }}
         name={name}
         ticketTypes={ticketTypes}
       />
