@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <div>
       <Header />
-      <div className='p-4 md:p-0 flex flex-col gap-[50]'>
+      <div className='p-4 md:p-0 flex flex-col gap-8'>
         <Tickets />
 
         <Summary />
