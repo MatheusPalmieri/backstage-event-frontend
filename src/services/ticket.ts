@@ -46,7 +46,7 @@ export function getTicketTypes(
           grossPrice: 50,
           installments: 12,
           installmentsPrice: 60,
-          tax: 10,
+          tax: 5,
           quantity: {
             total: 30,
             available: 30,
@@ -66,7 +66,7 @@ export function getTicketTypes(
           grossPrice: 60,
           installments: 12,
           installmentsPrice: 72,
-          tax: 10,
+          tax: 6,
           quantity: {
             total: 50,
             available: 50,
