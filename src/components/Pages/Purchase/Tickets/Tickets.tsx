@@ -2,7 +2,7 @@ import { FlexCenter } from '@/components/Flex/FlexCenter';
 import { IconTicket } from '@tabler/icons-react';
 import { Ticket } from './Ticket';
 import { Divider } from '@/components/Divider';
-import { Header } from './Header';
+import { Header } from '../Header';
 
 export const Tickets = () => {
   return (

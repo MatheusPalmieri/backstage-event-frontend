@@ -2,8 +2,8 @@
 
 import { Button } from '@/components/Buttons/Button';
 import { Header } from '@/components/Header';
-import { Summary } from '@/components/Pages/Purchase/Summary';
-import { Tickets } from '@/components/Pages/Purchase/Tickets';
+import { Summary } from '@/components/Pages/Purchase/Summary/Summary';
+import { Tickets } from '@/components/Pages/Purchase/Tickets/Tickets';
 import { useEvent } from '@/contexts/event/useEvent';
 import { useRouter } from 'next/navigation';
 
