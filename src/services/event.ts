@@ -166,31 +166,15 @@ export function getEvents(): Promise<{
 
 export function getEvent(
   slug: string,
-): Promise<
-  | { data: Event; status: number }
-  | { data: { message: string; statusCode: number }; status: number }
-> {
-  const event = events.find((event) => {
-    return event.slug === slug;
-  });
-
-  if (!event) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          data: { message: 'Event not found', statusCode: 404 },
-          status: 404,
-        });
-      }, 2000);
-    });
-  }
+): Promise<{ data: Event; status: number }> {
+  const event = events.find((event) => event.slug === slug);
 
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        data: event,
+        data: event ?? events[0],
         status: 200,
       });
-    }, 2000);
+    }, 100);
   });
 }

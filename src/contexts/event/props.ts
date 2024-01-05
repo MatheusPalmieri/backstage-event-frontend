@@ -8,4 +8,6 @@ export type EventProviderProps = {
 export type EventContextProps = {
   event: Event | null;
   setEvent: (event: Event | null) => void;
+
+  loadEvent: (slug: string) => Promise<Event | null>;
 };
