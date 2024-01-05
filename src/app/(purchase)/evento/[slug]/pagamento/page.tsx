@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/Buttons/Button';
 import { Header } from '@/components/Header';
+import { Payment } from '@/components/Pages/Purchase/Payment/Payment';
 import { Summary } from '@/components/Pages/Purchase/Summary/Summary';
 import { Tickets } from '@/components/Pages/Purchase/Tickets/Tickets';
 import { useEvent } from '@/contexts/event/useEvent';
@@ -20,8 +21,8 @@ export default function Page() {
       <Header />
       <div className='p-4 md:p-0 flex flex-col gap-8'>
         <Tickets />
-
         <Summary />
+        <Payment />
 
         <Button className='w-full mt-[100px]' onClick={receipt}>
           Comprovante
