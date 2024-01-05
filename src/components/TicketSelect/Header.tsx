@@ -1,6 +1,8 @@
 import { useTicket } from '@/contexts/ticket/useTicket';
 import { formatCurrency } from '@/helpers/format';
-import { IconShoppingCart } from '@tabler/icons-react';
+import { IconShoppingCart, IconTicket } from '@tabler/icons-react';
+import { Children } from 'react';
+import { FlexCenter } from '../Flex/FlexCenter';
 
 interface HeaderProps {
   tickets: {
@@ -24,12 +26,15 @@ export const Header = ({ tickets }: HeaderProps) => {
         borderStartEndRadius: '20px',
       }}
     >
-      <p className='font-semibold'>Ingresso{tickets.length > 0 && 's'}</p>
+      <FlexCenter className='gap-[5px]'>
+        <IconTicket />
+        <p className='font-semibold'>Ingresso{tickets.length > 0 && 's'}</p>
+      </FlexCenter>
 
-      <div className='flex items-center justify-center'>
+      <FlexCenter className='gap-[5px]'>
         <IconShoppingCart />
-        <p className='font-semibold ml-2'>{formatCurrency(amount)}</p>
-      </div>
+        <p className='font-bold tracking-wide'>{formatCurrency(amount)}</p>
+      </FlexCenter>
     </header>
   );
 };
