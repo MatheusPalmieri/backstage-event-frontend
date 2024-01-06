@@ -20,11 +20,12 @@ export default function Page() {
   };
 
   return (
-    <div>
+    <main>
       <Header />
+
       <div className='p-4 md:p-0 flex flex-col gap-4'>
-        <Tickets />
-        <Summary />
+        {/* <Tickets /> */}
+        {/* <Summary /> */}
         <Payment />
 
         <motion.div
@@ -52,6 +53,6 @@ export default function Page() {
           Pagar Agora
         </Button>
       </div>
-    </div>
+    </main>
   );
 }
