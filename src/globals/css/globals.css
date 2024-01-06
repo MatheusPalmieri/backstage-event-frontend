@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --bg-primary-500: #7e23d9;
+  --bg-primary-600: #6519b0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,4 +35,18 @@ body {
 .button-icon-backstage {
   width: 200px;
   height: 50px;
+}
+
+/* Buttons */
+button {
+  outline: none;
+  border: none;
+  height: 50px;
+  background-color: var(--bg-primary-500);
+}
+
+button:hover {
+  background-color: var(--bg-primary-600);
+  cursor: pointer;
+  transition: background-color 0.3s;
 }

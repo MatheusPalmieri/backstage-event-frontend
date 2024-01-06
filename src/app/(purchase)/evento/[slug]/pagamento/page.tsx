@@ -24,8 +24,8 @@ export default function Page() {
         <Summary />
         <Payment />
 
-        <Button className='w-full mt-[100px]' onClick={receipt}>
-          Comprovante
+        <Button className='w-full tracking-wide' onClick={receipt}>
+          Pagar Agora
         </Button>
       </div>
     </div>

@@ -8,7 +8,7 @@ const Check = ({ check }: { check: boolean }) => {
   return (
     <FlexCenter
       className={`w-[20px] h-[20px] rounded-full border-2 ${
-        check ? 'border-secondary-50' : 'border-secondary-300'
+        check ? 'border-secondary-50' : 'border-secondary-200'
       }`}
     >
       {check && (
@@ -55,7 +55,7 @@ export const Input = ({
         <FlexCenter
           className={`w-full h-[50px]  justify-between p-4 rounded-lg cursor-pointer ${
             checkedMethod === method ? 'bg-primary-400' : 'bg-secondary-400'
-          } hover:bg-primary-100`}
+          } hover:bg-secondary-300`}
           style={{ transition: 'all 0.3s' }}
         >
           <Icon size='30px' />

@@ -14,7 +14,7 @@ export const Button = ({
   onClick,
 }: ButtonProps) => (
   <button
-    className={`bg-primary-500 h-[50px] rounded-lg uppercase font-bold ${className}`}
+    className={`rounded-lg font-bold ${className}`}
     disabled={disabled}
     onClick={onClick}
   >
