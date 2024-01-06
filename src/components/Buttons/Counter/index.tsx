@@ -16,8 +16,12 @@ export const ButtonCounter = ({
   disabled,
 }: ButtonCounterProps) => {
   return (
-    <button onClick={() => action()} disabled={disabled}>
-      <Icon size='30px' color={color} />
+    <button
+      onClick={() => action()}
+      disabled={disabled}
+      className='bg-transparent h-[30px] hover:bg-transparent'
+    >
+      <Icon size='30px' color={color} style={{ transition: 'all 0.3s' }} />
     </button>
   );
 };
