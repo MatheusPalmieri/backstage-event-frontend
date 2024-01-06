@@ -53,9 +53,10 @@ export const Input = ({
       />
       <label htmlFor={method}>
         <FlexCenter
-          className={`w-full h-[50px]  justify-between p-4 rounded-lg ${
-            checkedMethod === method ? 'bg-primary-300' : 'bg-secondary-400'
-          }`}
+          className={`w-full h-[50px]  justify-between p-4 rounded-lg cursor-pointer ${
+            checkedMethod === method ? 'bg-primary-400' : 'bg-secondary-400'
+          } hover:bg-primary-100`}
+          style={{ transition: 'all 0.3s' }}
         >
           <Icon size='30px' />
           <p className='font-mediums tracking-wide'>{name}</p>

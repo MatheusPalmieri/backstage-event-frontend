@@ -27,7 +27,7 @@ export const FormPayment = () => {
         <Input
           group='payment'
           method='Boleto'
-          Icon={IconCreditCard}
+          Icon={IconFileBarcode}
           name='Boleto'
           checkedMethod={method}
           setMethod={setMethod}
@@ -35,7 +35,7 @@ export const FormPayment = () => {
         <Input
           group='payment'
           method='Card Credit'
-          Icon={IconFileBarcode}
+          Icon={IconCreditCard}
           name='Cartão de Crédito'
           checkedMethod={method}
           setMethod={setMethod}
