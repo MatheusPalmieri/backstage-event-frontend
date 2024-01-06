@@ -2,11 +2,7 @@
 
 import { Input } from '@/components/PaymentRadio/Input';
 import { Radio } from '@/components/PaymentRadio/Radio';
-import {
-  IconCreditCard,
-  IconFileBarcode,
-  IconQrcode,
-} from '@tabler/icons-react';
+import { IconCreditCard, IconQrcode } from '@tabler/icons-react';
 import { useState } from 'react';
 
 export const FormPayment = () => {
@@ -21,14 +17,6 @@ export const FormPayment = () => {
           Icon={IconQrcode}
           name='Pix'
           checked
-          checkedMethod={method}
-          setMethod={setMethod}
-        />
-        <Input
-          group='payment'
-          method='Boleto'
-          Icon={IconFileBarcode}
-          name='Boleto'
           checkedMethod={method}
           setMethod={setMethod}
         />
