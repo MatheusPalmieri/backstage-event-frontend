@@ -39,9 +39,7 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off",
-    "no-unused-vars": "error",
     "@typescript-eslint/no-unused-vars": ["error"],
-
     "import/no-unresolved": "error",
     "import/named": "error",
     "import/default": "error",
@@ -54,6 +52,20 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "import/no-unused-modules": [
+      "error",
+      {
+        "missingExports": true,
+        "unusedExports": true
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }
