@@ -1,3 +1,4 @@
+import { Container } from '@/components/Container';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Content } from '@/components/Pages/Event/Content';
@@ -19,7 +20,7 @@ export default async function Page({
   const { name, resource, description, location } = event as Event;
 
   return (
-    <main className='bg-secondary-550 w-full min-h-screen flex flex-col'>
+    <main className='w-full flex flex-col'>
       <title>{name.toUpperCase()}</title>
 
       <Header slug={event.slug} />

@@ -7,7 +7,7 @@ export default async function Home() {
   const { data: events } = await getEvents();
 
   return (
-    <main className='bg-secondary-550 w-full min-h-screen flex flex-col'>
+    <main className='flex flex-col'>
       <Header />
 
       <Container>

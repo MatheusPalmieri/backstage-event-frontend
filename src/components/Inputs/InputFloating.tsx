@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 interface InputFloatingProps {
   type?:
     | 'text'
@@ -10,13 +14,17 @@ interface InputFloatingProps {
     | 'textarea'
     | undefined;
   label: string;
+  format?: (value: string) => string;
 }
 
 export const InputFloating = ({
   type = 'text',
   label,
+  format,
   ...props
 }: InputFloatingProps) => {
+  const [value, setValue] = useState<string>('');
+
   return (
     <div className='relative'>
       <input
@@ -27,6 +35,11 @@ export const InputFloating = ({
                         rounded-lg border-2 border-secondary-50 focus:border-primary-500
                         focus:ring-0 peer transition duration-300'
         {...props}
+        value={value}
+        onChange={(e) => {
+          const { value } = e.target;
+          setValue(format ? format(value) : value);
+        }}
       />
       <label
         htmlFor='floating_outlined'

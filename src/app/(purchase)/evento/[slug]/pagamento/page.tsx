@@ -44,7 +44,7 @@ export default function Page() {
         >
           <FlexCenter>
             <div className='bg-secondary-400 p-4 rounded-lg'>
-              <QRCodeWithImage />
+              {/* <QRCodeWithImage /> */}
             </div>
           </FlexCenter>
         </motion.div>
