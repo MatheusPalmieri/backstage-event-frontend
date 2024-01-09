@@ -1,9 +1,13 @@
 import QRCode from 'qrcode.react';
 import WhiteBolt from '@/../public/images/logo/logo-white.svg';
 
-export const QRCodeWithImage = () => (
+interface QRCodeWithImageProps {
+  value: string;
+}
+
+export const QRCodeWithImage = ({ value }: QRCodeWithImageProps) => (
   <QRCode
-    value='https://www.example.com'
+    value={value}
     bgColor='#555555'
     fgColor='#FFFFFF'
     size={300}
@@ -13,6 +17,6 @@ export const QRCodeWithImage = () => (
       height: 60,
       excavate: true,
     }}
-    style={{ borderRadius: 5 }}
+    style={{ borderRadius: 10 }}
   />
 );

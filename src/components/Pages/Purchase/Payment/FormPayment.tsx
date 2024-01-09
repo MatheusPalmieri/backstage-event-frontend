@@ -2,31 +2,32 @@
 
 import { Input } from '@/components/PaymentRadio/Input';
 import { Radio } from '@/components/PaymentRadio/Radio';
+import { useTicket } from '@/contexts/ticket/useTicket';
+import { PaymentMethod } from '@/interfaces/payment';
 import { IconCreditCard, IconQrcode } from '@tabler/icons-react';
-import { useState } from 'react';
 
 export const FormPayment = () => {
-  const [method, setMethod] = useState<string>('');
+  const { paymentMethod, setPaymentMethod } = useTicket();
 
   return (
     <div>
       <Radio className='flex flex-col gap-[10px]'>
         <Input
           group='payment'
-          method='Pix'
+          method={PaymentMethod.Pix}
           Icon={IconQrcode}
           name='Pix'
           checked
-          checkedMethod={method}
-          setMethod={setMethod}
+          checkedMethod={paymentMethod}
+          setMethod={setPaymentMethod}
         />
         <Input
           group='payment'
-          method='Card Credit'
+          method={PaymentMethod.CreditCard}
           Icon={IconCreditCard}
           name='Cartão de Crédito'
-          checkedMethod={method}
-          setMethod={setMethod}
+          checkedMethod={paymentMethod}
+          setMethod={setPaymentMethod}
         />
       </Radio>
     </div>

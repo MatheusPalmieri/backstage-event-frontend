@@ -6,7 +6,6 @@ import Logo from '@/../public/images/logo/logo-backstage.svg';
 
 import { useMobile } from '@/helpers/mobile';
 import Link from 'next/link';
-import { useEvent } from '@/contexts/event/useEvent';
 
 const Image = ({
   image,
@@ -23,16 +22,7 @@ const Image = ({
   />
 );
 
-interface HeaderProps {
-  slug?: string;
-}
-
-export const Header = ({ slug }: HeaderProps) => {
-  if (slug) {
-    const { loadEvent } = useEvent();
-    loadEvent(slug);
-  }
-
+export const Header = () => {
   const isMobile = useMobile();
 
   return (

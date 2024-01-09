@@ -1,8 +1,6 @@
-'use client';
-
 import { Icon } from '@tabler/icons-react';
 import { FlexCenter } from '../Flex/FlexCenter';
-import { useLayoutEffect } from 'react';
+import { PaymentMethod } from '@/interfaces/payment';
 
 const Check = ({ check }: { check: boolean }) => {
   return (
@@ -20,12 +18,12 @@ const Check = ({ check }: { check: boolean }) => {
 
 interface InputProps {
   group: string;
-  method: string;
+  method: PaymentMethod;
   Icon: Icon;
   name: string;
   checked?: boolean;
-  checkedMethod: string;
-  setMethod: (method: string) => void;
+  checkedMethod: PaymentMethod;
+  setMethod: (method: PaymentMethod) => void;
 }
 
 export const Input = ({
@@ -37,10 +35,6 @@ export const Input = ({
   checkedMethod,
   setMethod,
 }: InputProps) => {
-  useLayoutEffect(() => {
-    checked && setMethod(method);
-  }, []);
-
   return (
     <>
       <input

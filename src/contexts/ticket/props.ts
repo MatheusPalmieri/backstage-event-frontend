@@ -1,3 +1,4 @@
+import { PaymentMethod } from '@/interfaces/payment';
 import { TicketType } from '@/interfaces/ticketType';
 import { ReactNode } from 'react';
 
@@ -19,4 +20,7 @@ export type TicketContextProps = {
 
   quantity: number;
   setQuantity: (quantity: number) => void;
+
+  paymentMethod: PaymentMethod;
+  setPaymentMethod: (method: PaymentMethod) => void;
 };

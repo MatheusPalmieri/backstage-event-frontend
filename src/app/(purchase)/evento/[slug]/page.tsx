@@ -1,9 +1,9 @@
-import { Container } from '@/components/Container';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Content } from '@/components/Pages/Event/Content';
 import { Main } from '@/components/Pages/Event/Main';
 import { Event } from '@/interfaces/event';
+import { EventSetContext } from '@/contexts/event/provider';
 import { getEvent } from '@/services/event';
 import { getTicketTypes } from '@/services/ticket';
 
@@ -22,8 +22,8 @@ export default async function Page({
   return (
     <main className='w-full flex flex-col'>
       <title>{name.toUpperCase()}</title>
-
-      <Header slug={event.slug} />
+      <EventSetContext event={event} />
+      <Header />
 
       <Main
         image={{

@@ -9,6 +9,7 @@ import {
 } from 'react';
 import { TicketType } from '@/interfaces/ticketType';
 import { TicketContextProps, TicketProviderProps } from './props';
+import { PaymentMethod } from '@/interfaces/payment';
 
 export const TicketContext = createContext({} as TicketContextProps);
 
@@ -18,6 +19,10 @@ export function TicketProvider({ children }: TicketProviderProps) {
   const [amount, setAmount] = useState<number>(0);
   const [amountInstallments, setAmountInstallments] = useState<number>(0);
   const [quantity, setQuantity] = useState<number>(0);
+
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>(
+    PaymentMethod.Pix,
+  );
 
   const handleCalculateAmount = useCallback(
     (action: 'remove' | 'add', value: number) => {
@@ -51,6 +56,9 @@ export function TicketProvider({ children }: TicketProviderProps) {
 
       quantity,
       setQuantity,
+
+      paymentMethod,
+      setPaymentMethod,
     }),
     [
       ticketType,
@@ -66,6 +74,9 @@ export function TicketProvider({ children }: TicketProviderProps) {
 
       quantity,
       setQuantity,
+
+      paymentMethod,
+      setPaymentMethod,
     ],
   );
 
