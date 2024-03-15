@@ -3,13 +3,17 @@ import { Flex } from '@/components/Flex/Flex';
 import { FlexCenter } from '@/components/Flex/FlexCenter';
 import { formatCurrency } from '@/helpers/format';
 
-interface TicketProps {
+interface Props {
   quantity: number;
   ticket: string;
   price: number;
 }
 
-export const Ticket = ({ quantity, ticket, price }: TicketProps) => (
+export const PurchaseTicketsInformation = ({
+  quantity,
+  ticket,
+  price,
+}: Props) => (
   <Flex className='text-secondary-700 items-center justify-between'>
     <FlexCenter className='gap-[10px]'>
       <BadgesNumber className='w-[20px] justify-end'>

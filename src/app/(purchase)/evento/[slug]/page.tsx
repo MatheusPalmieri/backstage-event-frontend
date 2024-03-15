@@ -1,7 +1,7 @@
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { Content } from '@/components/Pages/Event/Content';
-import { Main } from '@/components/Pages/Event/Main';
+import { EventContent } from '@/sections/Event/Content';
+import { EventMain } from '@/sections/Event/Main';
 import { Event } from '@/interfaces/event';
 import { EventSetContext } from '@/contexts/event/provider';
 import { getEvent } from '@/services/event';
@@ -25,7 +25,7 @@ export default async function Page({
       <EventSetContext event={event} />
       <Header />
 
-      <Main
+      <EventMain
         image={{
           url: resource.url,
           alt: `Imagem referente ao evento ${name}`,
@@ -34,7 +34,7 @@ export default async function Page({
         ticketTypes={ticketTypes}
       />
 
-      <Content description={description} location={location} />
+      <EventContent description={description} location={location} />
 
       <Footer />
     </main>

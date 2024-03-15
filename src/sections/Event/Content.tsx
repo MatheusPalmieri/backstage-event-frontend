@@ -7,12 +7,12 @@ import {
   IconTextCaption,
 } from '@tabler/icons-react';
 
-interface ContentProps {
+interface Props {
   description: string | TrustedHTML;
   location: Location;
 }
 
-export const Content = ({ description, location }: ContentProps) => {
+export const EventContent = ({ description, location }: Props) => {
   const { address, street, number, city, state, country } = location;
 
   return (

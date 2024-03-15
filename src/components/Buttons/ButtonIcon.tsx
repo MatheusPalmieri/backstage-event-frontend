@@ -3,8 +3,7 @@ import { ReactNode } from 'react';
 
 const IconComponent = ({ Icon }: { Icon: Icon }) => <Icon size={30} />;
 
-interface ButtonIconProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   w?: string | number;
   h?: string | number;
@@ -21,7 +20,7 @@ export const ButtonIcon = ({
   RightIcon,
   action,
   ...props
-}: ButtonIconProps) => {
+}: Props) => {
   return (
     <button
       className='button-icon-backstage bg-primary-500 flex items-center justify-center gap-2 text-white font-bold rounded-lg px-4 py-2 transition duration-300 hover:bg-primary-600'

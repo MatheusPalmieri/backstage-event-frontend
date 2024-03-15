@@ -2,16 +2,16 @@
 
 import { Button } from '@/components/Buttons/Button';
 import { Header } from '@/components/Header';
-import { Payment } from '@/components/Pages/Purchase/Payment/Payment';
-import { Summary } from '@/components/Pages/Purchase/Summary/Summary';
-import { Tickets } from '@/components/Pages/Purchase/Tickets/Tickets';
+import { PurchasePayment } from '@/sections/Purchase/Payment';
+import { PurchaseSummary } from '@/sections/Purchase/Summary';
+import { PurchaseTickets } from '@/sections/Purchase/Tickets';
 import { useEvent } from '@/contexts/event/useEvent';
 import { useRouter } from 'next/navigation';
 import { useTicket } from '@/contexts/ticket/useTicket';
-import { PaymentResult } from '@/components/Pages/Purchase/Payment/PaymentResult';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { BuyerInformation } from '@/schemas/BuyerInformation';
+import { PurchasePaymentResult } from '@/sections/Purchase/Payment/Result';
 
 export default function Page() {
   const { event } = useEvent();
@@ -42,14 +42,14 @@ export default function Page() {
       <Header />
 
       <div className='p-4 md:p-0 flex flex-col gap-4'>
-        <Tickets />
-        <Summary />
+        <PurchaseTickets />
+        <PurchaseSummary />
 
         {showPaymentResult ? (
-          <PaymentResult paymentMethod={paymentMethod} />
+          <PurchasePaymentResult paymentMethod={paymentMethod} />
         ) : (
           <>
-            <Payment register={register} />
+            <PurchasePayment register={register} />
 
             <Button className='w-full tracking-wide' onClick={receipt}>
               Pagar Agora

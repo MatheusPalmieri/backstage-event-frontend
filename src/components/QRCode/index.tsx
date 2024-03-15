@@ -1,11 +1,11 @@
 import QRCode from 'qrcode.react';
 import WhiteBolt from '@/../public/images/logo/logo-white.svg';
 
-interface QRCodeWithImageProps {
+interface Props {
   value: string;
 }
 
-export const QRCodeWithImage = ({ value }: QRCodeWithImageProps) => (
+export const QRCodeWithImage = ({ value }: Props) => (
   <QRCode
     value={value}
     bgColor='#555555'

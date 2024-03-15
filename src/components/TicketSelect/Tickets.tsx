@@ -3,11 +3,11 @@ import { Ticket } from './Ticket';
 import { Counter } from './Counter';
 import { Divider } from '../Divider';
 
-interface TicketsProps {
+interface Props {
   ticketTypes: TicketType[];
 }
 
-export const Tickets = ({ ticketTypes }: TicketsProps) => (
+export const Tickets = ({ ticketTypes }: Props) => (
   <div>
     {ticketTypes.map((ticket) => {
       const { name, lots } = ticket;

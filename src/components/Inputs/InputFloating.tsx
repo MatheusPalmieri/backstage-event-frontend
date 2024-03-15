@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-interface InputFloatingProps {
+interface Props {
   type?:
     | 'text'
     | 'number'
@@ -22,7 +22,7 @@ export const InputFloating = ({
   label,
   format,
   ...props
-}: InputFloatingProps) => {
+}: Props) => {
   const [value, setValue] = useState<string>('');
 
   return (

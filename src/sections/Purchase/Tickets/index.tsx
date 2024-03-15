@@ -1,12 +1,12 @@
 'use client';
 
 import { IconTicket } from '@tabler/icons-react';
-import { Ticket } from './Ticket';
+import { PurchaseTicketsInformation } from './Ticket';
 import { Divider } from '@/components/Divider';
 import { motion } from 'framer-motion';
 import { Accordion } from '@/components/Accordion';
 
-export const Tickets = () => (
+export const PurchaseTickets = () => (
   <Accordion header={{ Icon: IconTicket, text: 'Ingressos Selecionados' }}>
     {[1, 2, 3].map((_, i) => (
       <motion.div
@@ -16,7 +16,7 @@ export const Tickets = () => (
         transition={{ delay: i * 0.1 }}
         className='p-4 flex flex-col gap-[10px]'
       >
-        <Ticket
+        <PurchaseTicketsInformation
           quantity={i + 1}
           ticket={`Full Lote ${_}°`}
           price={(i + 15) * 10}

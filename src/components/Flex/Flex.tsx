@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 
-interface FlexProps {
+interface Props {
   children: ReactNode;
   className?: string;
 }
 
-export const Flex = ({ children, className }: FlexProps) => (
+export const Flex = ({ children, className }: Props) => (
   <div className={`flex ${className}`}>{children}</div>
 );

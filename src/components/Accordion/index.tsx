@@ -5,7 +5,7 @@ import { Header } from './Header';
 import { Icon } from '@tabler/icons-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-interface AccordionProps {
+interface Props {
   children: ReactNode;
   className?: string;
   header: {
@@ -18,7 +18,7 @@ export const Accordion = ({
   children,
   className,
   header: { Icon, text },
-}: AccordionProps) => {
+}: Props) => {
   const [show, setShow] = useState<boolean>(true);
 
   return (

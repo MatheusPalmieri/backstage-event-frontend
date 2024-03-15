@@ -1,11 +1,11 @@
 import { IconShoppingCart } from '@tabler/icons-react';
-import { Item } from './Item';
+import { PurchaseSummaryItem } from './Item';
 import { Flex } from '@/components/Flex/Flex';
 import { formatCurrency } from '@/helpers/format';
 import { Accordion } from '@/components/Accordion';
 import { motion } from 'framer-motion';
 
-export const Summary = () => {
+export const PurchaseSummary = () => {
   return (
     <Accordion header={{ Icon: IconShoppingCart, text: 'Resumo de Compra' }}>
       <motion.div
@@ -14,9 +14,9 @@ export const Summary = () => {
         transition={{ delay: 1 * 0.1 }}
       >
         <Flex className='p-4 flex-col gap-[2px]'>
-          <Item text='Sub-total' price={50} />
-          <Item text='Desconto' price={10} negative />
-          <Item text='Taxa de Serviço' price={4} />
+          <PurchaseSummaryItem text='Sub-total' price={50} />
+          <PurchaseSummaryItem text='Desconto' price={10} negative />
+          <PurchaseSummaryItem text='Taxa de Serviço' price={4} />
         </Flex>
       </motion.div>
 

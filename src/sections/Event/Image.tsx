@@ -1,9 +1,9 @@
-interface ImageProps {
+interface Props {
   url: string | null;
   alt: string;
 }
 
-export const Image = ({ url, alt }: ImageProps) => {
+export const EventImage = ({ url, alt }: Props) => {
   return (
     <section
       className={`w-full aspect-video rounded-b-xl bg-gray-400 ${

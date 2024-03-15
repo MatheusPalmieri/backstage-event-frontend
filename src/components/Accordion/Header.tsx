@@ -3,14 +3,14 @@
 import { FlexCenter } from '@/components/Flex/FlexCenter';
 import { Icon, IconChevronUp } from '@tabler/icons-react';
 
-interface HeaderProps {
+interface Props {
   Icon: Icon;
   text: string;
   show: boolean;
   setShow: (show: boolean) => void;
 }
 
-export const Header = ({ Icon, text, show, setShow }: HeaderProps) => {
+export const Header = ({ Icon, text, show, setShow }: Props) => {
   return (
     <div className='bg-primary-500 w-[100%] max-w-[800px] h-[50px] flex items-center justify-between p-4 rounded-[20px] shadow-lg z-10'>
       <FlexCenter className='gap-[5px]'>

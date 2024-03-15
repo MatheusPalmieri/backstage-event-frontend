@@ -5,12 +5,12 @@ import { useTicket } from '@/contexts/ticket/useTicket';
 import { IconCircleMinus, IconCirclePlus } from '@tabler/icons-react';
 import { useState } from 'react';
 
-interface CounterProps {
+interface Props {
   price: number;
   maxPerOrder: number;
 }
 
-export const Counter = ({ price, maxPerOrder }: CounterProps) => {
+export const Counter = ({ price, maxPerOrder }: Props) => {
   const { handleCalculateAmount } = useTicket();
 
   const [total, setTotal] = useState<number>(0);

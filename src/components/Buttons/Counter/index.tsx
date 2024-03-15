@@ -2,7 +2,7 @@
 
 import { Icon } from '@tabler/icons-react';
 
-interface ButtonCounterProps {
+interface Props {
   Icon: Icon;
   color?: string;
   action: () => void;
@@ -14,7 +14,7 @@ export const ButtonCounter = ({
   color = 'white',
   action,
   disabled,
-}: ButtonCounterProps) => {
+}: Props) => {
   return (
     <button
       onClick={() => action()}

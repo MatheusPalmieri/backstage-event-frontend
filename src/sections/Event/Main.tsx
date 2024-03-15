@@ -1,14 +1,14 @@
 'use client';
 
 import { ButtonIcon } from '@/components/Buttons/ButtonIcon';
-import { Image } from './Image';
+import { EventImage } from './Image';
 import { IconCalendarWeek, IconMapPin, IconShare2 } from '@tabler/icons-react';
 import { TextIcon } from '@/components/Texts/TextIcon';
 import { Title } from '@/components/Titles/Title';
-import { Ticket } from './Ticket';
+import { EventTicket } from './Ticket';
 import { TicketType } from '@/interfaces/ticketType';
 
-interface MainProps {
+interface Props {
   image: {
     url: string | null;
     alt: string;
@@ -17,7 +17,7 @@ interface MainProps {
   ticketTypes: TicketType[];
 }
 
-export const Main = ({ image, name, ticketTypes }: MainProps) => {
+export const EventMain = ({ image, name, ticketTypes }: Props) => {
   const { url, alt } = image;
 
   const share = () => {
@@ -37,7 +37,7 @@ export const Main = ({ image, name, ticketTypes }: MainProps) => {
   return (
     <section className='bg-secondary-525' style={{ marginBottom: '25px' }}>
       <article>
-        <Image url={url} alt={alt} />
+        <EventImage url={url} alt={alt} />
 
         <ButtonIcon
           LeftIcon={IconShare2}
@@ -61,7 +61,7 @@ export const Main = ({ image, name, ticketTypes }: MainProps) => {
       </article>
 
       <article className='p-4'>
-        <Ticket ticketTypes={ticketTypes} />
+        <EventTicket ticketTypes={ticketTypes} />
       </article>
     </section>
   );

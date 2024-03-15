@@ -6,16 +6,17 @@ import { BuyerInformation as BuyerInformationSchema } from '@/schemas/BuyerInfor
 import { IconId } from '@tabler/icons-react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-interface BuyerInformationProps {
+interface Props {
   register: any;
 }
 
-export const BuyerInformation = ({ register }: BuyerInformationProps) => {
+export const PurchasePaymentBuyerInformation = ({ register }: Props) => {
   return (
     <Flex className='flex-col gap-4'>
       <TitleIcon Icon={IconId}>Informações do comprador</TitleIcon>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+      <form>
         <InputFloating label='C.P.F.' format={formatCPF} />
         <InputFloating type='tel' label='Número' format={formatPhoneNumber} />
       </form>

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-interface ButtonProps {
+interface Props {
   children: ReactNode;
   className?: string;
   disabled?: boolean;
@@ -12,7 +12,7 @@ export const Button = ({
   className = '',
   disabled = false,
   onClick,
-}: ButtonProps) => (
+}: Props) => (
   <button
     className={`rounded-lg font-bold ${className}`}
     disabled={disabled}

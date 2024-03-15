@@ -9,17 +9,11 @@ import { useEvent } from '@/contexts/event/useEvent';
 import { motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 
-const Title = ({ children }: { children: ReactNode }) => (
-  <div className='w-full'>
-    <TitleIcon>{children}</TitleIcon>
-  </div>
-);
-
-interface PixProps {
+interface Props {
   value: string;
 }
 
-export const Pix = ({ value }: PixProps) => {
+export const PurchasePaymentPix = ({ value }: Props) => {
   const { redirectByExpiration } = useEvent();
 
   const [copied, setCopied] = useState<boolean>(false);
@@ -78,3 +72,9 @@ export const Pix = ({ value }: PixProps) => {
     </motion.div>
   );
 };
+
+const Title = ({ children }: { children: ReactNode }) => (
+  <div className='w-full'>
+    <TitleIcon>{children}</TitleIcon>
+  </div>
+);

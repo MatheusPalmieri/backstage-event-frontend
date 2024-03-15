@@ -16,7 +16,7 @@ const Check = ({ check }: { check: boolean }) => {
   );
 };
 
-interface InputProps {
+interface Props {
   group: string;
   method: PaymentMethod;
   Icon: Icon;
@@ -34,7 +34,7 @@ export const Input = ({
   checked = false,
   checkedMethod,
   setMethod,
-}: InputProps) => {
+}: Props) => {
   return (
     <>
       <input

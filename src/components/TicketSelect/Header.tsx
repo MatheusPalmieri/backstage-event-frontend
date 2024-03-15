@@ -4,7 +4,7 @@ import { IconShoppingCart, IconTicket } from '@tabler/icons-react';
 import { Children } from 'react';
 import { FlexCenter } from '../Flex/FlexCenter';
 
-interface HeaderProps {
+interface Props {
   tickets: {
     _id: string;
     price: number;
@@ -12,7 +12,7 @@ interface HeaderProps {
   }[];
 }
 
-export const Header = ({ tickets }: HeaderProps) => {
+export const Header = ({ tickets }: Props) => {
   const { amount } = useTicket();
 
   return (

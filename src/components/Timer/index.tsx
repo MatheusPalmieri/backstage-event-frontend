@@ -3,14 +3,14 @@
 import { useTimer } from '@/hooks/useTimer';
 import { useEffect, useLayoutEffect, useRef } from 'react';
 
-interface TimerProps {
+interface Props {
   time: number; // seconds | example: 120 = 2 minutes
   text?: string;
   className?: string;
   action?: () => void;
 }
 
-export const Timer = ({ time, text, className, action }: TimerProps) => {
+export const Timer = ({ time, text, className, action }: Props) => {
   const { timer, start } = useTimer(time);
   const isInitialMount = useRef(true);
 
