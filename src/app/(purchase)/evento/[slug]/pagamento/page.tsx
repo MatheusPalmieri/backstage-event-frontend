@@ -10,6 +10,8 @@ import { useRouter } from 'next/navigation';
 import { useTicket } from '@/contexts/ticket/useTicket';
 import { PaymentResult } from '@/components/Pages/Purchase/Payment/PaymentResult';
 import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { BuyerInformation } from '@/schemas/BuyerInformation';
 
 export default function Page() {
   const { event } = useEvent();
@@ -18,9 +20,21 @@ export default function Page() {
 
   const [showPaymentResult, setShowPaymentResult] = useState<boolean>(false);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<BuyerInformation>();
+  const onSubmit: SubmitHandler<BuyerInformation> = (data) => {
+    console.log('🚀 ~ BuyerInformation ~ data:', data);
+    return;
+  };
+
   const receipt = () => {
     // router.push(`/evento/${event?.slug}/comprovante`);
-    setShowPaymentResult(true);
+    // setShowPaymentResult(true);
+    handleSubmit(onSubmit);
+    console.log('🚀 ~ BuyerInformation ~ errors:', errors);
   };
 
   return (
@@ -35,7 +49,7 @@ export default function Page() {
           <PaymentResult paymentMethod={paymentMethod} />
         ) : (
           <>
-            <Payment />
+            <Payment register={register} />
 
             <Button className='w-full tracking-wide' onClick={receipt}>
               Pagar Agora
