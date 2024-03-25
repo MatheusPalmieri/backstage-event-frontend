@@ -5,11 +5,8 @@ interface Props {
 
 export const Divider = ({ margin = '20px', opacity = 0.2 }: Props) => (
   <div
-    className='bg-secondary-400'
+    className='w-full h-[1px] bg-secondary-400 mx-auto rounded-lg'
     style={{
-      width: '100%',
-      height: '1px',
-      marginInline: 'auto',
       marginBlock: margin,
       opacity: opacity,
     }}
