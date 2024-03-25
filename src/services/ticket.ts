@@ -89,7 +89,7 @@ export function getTicketTypes(
           data: [],
           status: 200,
         });
-      }, 2000);
+      }, 0);
     });
   }
 
@@ -99,6 +99,6 @@ export function getTicketTypes(
         data: ticketTypes,
         status: 200,
       });
-    }, 2000);
+    }, 0);
   });
 }

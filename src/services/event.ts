@@ -160,7 +160,7 @@ export function getEvents(): Promise<{
         data: events,
         status: 200,
       });
-    }, 2000);
+    }, 0);
   });
 }
 
@@ -175,6 +175,6 @@ export function getEvent(
         data: event ?? events[0],
         status: 200,
       });
-    }, 100);
+    }, 0);
   });
 }
